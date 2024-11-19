@@ -1,10 +1,24 @@
-NAME	=	libftprintf.a
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: emuzun <emuzun@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/11/19 18:13:01 by emuzun            #+#    #+#              #
+#    Updated: 2024/11/19 18:16:18 by emuzun           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-SRCS	=	ft_printf_src.c
+NAME = libftprintf.a
+
+SRCS  =  ft_printf_alph.c\
+		ft_printf_num.c\
+		ft_printf.c\
 
 OBJS = $(SRCS:.c=.o)
 
-CC	=	cc
+CC	=	gcc
 RM	=	rm -f
 CFLAGS	= -Wall -Wextra -Werror
 
