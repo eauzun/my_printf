@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_alph.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: emuzun <emuzun@student.42.fr>              +#+  +:+       +#+        */
+/*   By: emuzun <emuzun@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 18:12:38 by emuzun            #+#    #+#             */
-/*   Updated: 2024/11/19 18:12:39 by emuzun           ###   ########.fr       */
+/*   Updated: 2024/11/21 15:34:33 by emuzun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,15 @@ int	ft_putchar(char c)
 
 int	ft_putstr(char *s)
 {
-	int	i;
-	int	str;
+	int	res;
 
-	i = 0;
-	str = 0;
+	res = 0;
 	if (!s)
 	{
-		write(1, "(NULL)", 6);
-		return (6);
+		res += write(1, "(null)", 6);
+		return (res);
 	}
-	while (s[i])
-	{
-		str += ft_putchar(s[i]);
-		i++;
-	}
-	return (str);
+	while (*s)
+		res += write(1, s++, 1);
+	return (res);
 }
